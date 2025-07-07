@@ -1,0 +1,70 @@
+
+<style>
+	
+	
+	
+	#teacher{
+		width:100vw;
+		height:100vh;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		background-color:pink;
+
+	}
+	
+	form{
+		padding:20px;
+		border:2px solid black;
+		color:black;
+	}
+
+
+	label{
+		font-size:20px;
+		float:left;
+	}
+	
+	input{
+		height:40px;
+		width:250px;
+		font-size:20px;
+		outline:none;
+		border-radius:12px;
+	}
+	
+	a{
+		text-decoration:none;
+	}
+	
+	button{
+		height:45px;
+		width:fit-content;
+		padding:10px;
+		border-radius:12px;
+		background-color:white;
+		color:black;
+		font-size:20px;
+	}
+</style>
+</head>
+
+
+<div id="teacher">
+	<form action="validateTeacher" method="POST">
+		<label>Teacher ID:</label>
+		<input name="id" type="text"/>
+		
+		<br/><br/>
+		
+		<label>Password:</label>
+		<input name="password" type="password"/>
+		<br/>
+		<br/>
+		<a>
+		<button type="submit">Login</button>
+		</a>
+		
+	</form>
+</div>
+

@@ -1,0 +1,45 @@
+<style>
+	div{
+		width:100vw;
+		height:100vh;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+	}
+	
+	
+	form{
+		padding:30px;
+		border:1px solid black;
+	}
+	
+	label{
+		font-size:20px;
+		font-weight:700;
+		float:left;
+	}
+	
+	input{
+		height:40px;
+		width:250px;
+		border-radius:12px;
+		font-size:20px;
+		float:right;
+	}
+</style>
+
+
+<div>
+	
+	<form action="validateResult" method="POST">
+		<label>Enter Your Roll No:</label>
+		<input type="text" name="rollNo" />
+		<br><br/>
+		<label>Enter your DOB</label>
+		
+         <input type="text" name="dob" placeholder="dd-MM-yyyy" />
+		
+		<br><br/><br>
+		<button type="submit">Check Result</button>
+	</form>
+</div>

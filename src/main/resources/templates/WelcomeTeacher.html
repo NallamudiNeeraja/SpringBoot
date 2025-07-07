@@ -1,0 +1,15 @@
+<h1 th:text="${'Welcome ' + teacher_name + ' Sir,/Madam'}">  </h1>
+<h1>Upload marks of Student</h1>
+
+
+
+<div>
+	<form action="findStudent" method="POST">
+	   
+	    <input type="hidden" name="teacher_name"  th:value="${teacher_name}" readonly/><br>
+		<label>Student's Roll No:</label>
+		<input name="rollno" type="text"/>	
+		<button type="submit">Find Student</button>
+	</form>
+</div>
+

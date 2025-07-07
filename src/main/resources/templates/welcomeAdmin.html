@@ -1,0 +1,289 @@
+<style>
+.container
+{
+display:flex;
+align-items:center;
+justify-content:center;
+column-gap:30px;
+margin:15px;
+padding:5px;
+}
+img{
+border-radius:50%;
+width:40px;
+position:absolute;
+top:10px;
+right:10px;
+cursor:pointer;
+background-color:white;
+}
+#student
+{
+justify-content:center;
+height:450px;
+width:450px;
+border:1px solid black;
+background-color:#63C5DA;
+border-radius:20px;
+padding:10px;
+
+}
+#teacher
+{
+justify-content:center;
+height:450px;
+width:450px;
+border:1px solid black;
+background-color:#63C5DA;
+border-radius:20px;
+padding:10px;
+}
+#addTeacher{
+		display:none;
+		padding:20px;
+		border:1px solid black;
+		position:absolute;
+		background-color:#63C5DA;
+		color:black;
+		font-size:22px;
+		border-radius:20px;
+		margin:20px;
+	}
+	#editTeacher{
+		display:none;
+		padding:20px;
+		border:1px solid black;
+		position:absolute;
+	background-color:#63C5DA;
+		color:black;
+		font-size:22px;
+		border-radius:20px;
+	}
+	
+#deleteTeacher{
+		display:none;
+		padding:20px;
+		border:1px solid black;
+		position:absolute;
+		background-color:#63C5DA;
+		color:black;
+		font-size:22px;
+		border-radius:20px;
+	}
+	#addStudent{
+		display:none;
+		padding:20px;
+		border:1px solid black;
+		position:absolute;
+		background-color:#63C5DA;
+		color:black;
+		font-size:22px;
+		border-radius:20px;
+	}
+	
+	#editStudent{
+		display:none;
+		padding:20px;
+		border:1px solid black;
+		position:absolute;
+		background-color:#63C5DA;
+		color:black;
+		font-size:22px;
+		border-radius:20px;
+
+	}
+	
+	#deleteStudent{
+		display:none;
+		padding:20px;
+		border:1px solid black;
+		position:absolute;
+		background-color:#63C5DA;
+		color:black;
+		font-size:22px;
+		border-radius:20px;
+		margin:5px;
+	}
+	body{
+	background-color:white;
+	margin:30px;
+	}
+	button
+	{
+	       background-color:#63C5DA;
+	       color:black;
+	       font-size:20px;
+	       padding:5px;
+	       margin:10px;
+	       border-radius:10px; 
+	       width:40%;    
+	}
+	label{
+	display:inline-block;
+	width:150px;
+	}
+	input{
+	border-radius:5px;
+	height:30px;
+	display:inline-block;
+	width:50%;
+	}
+	h1{
+	padding:10px;
+	}
+
+</style>
+<body>
+<div class="main">
+<h1 style="text-align:center">WELCOME NEERAJA</h1>
+<div  style="text-align:center" class="container" >
+      <div id="student">
+              <h1>Add/Edit/Remove Students</h1>
+              <button onclick="addStudent()">ADD STUDENT</button><br><br>
+              <button onclick="editStudent()">EDIT STUDENT</button><br><br>
+              <button onclick="deleteStudent()">DELETE STUDENT</button><br><br>
+      </div>
+      <div id="teacher">
+              <h1>Add/Edit/Teachers</h1>
+              <button onclick="addTeacher()">ADD TEACHER</button><br><br>
+              <button onclick="editTeacher()">EDIT TEACHER</button><br><br>
+              <button onclick="deleteTeacher()">DELETE TEACHER</button><br><br>
+      </div>
+      <div id="addTeacher">
+      <img style="cursor:pointer" onclick="RemoveAddTeacher()" src="/images/delete.png" width="50"/><br><br>
+      <form action="addTeacher" method="POST">
+          <label>Name:</label>
+          <input name="name" type="text"><br><br>
+          <label>Id:</label>
+          <input name="id" type="text"><br><br>
+          <label>Password:</label>
+          <input name="password" type="text"><br><br>
+          <button type="submit">submit</button>
+        </form>  
+      </div>
+
+    <div id="editTeacher">
+    <img style="cursor:pointer" onclick="RemoveEditTeacher()" src="/images/delete.png" width="50"/><br><br>
+        <form action="editTeacher" method="POST">
+          <label>Name:</label>
+          <input name="name" type="text"><br><br>
+          <label>Id:</label>
+          <input name="id" type="text"><br><br>
+          <label>Password:</label>
+          <input name="password" type="text"><br><br>
+            <button type="submit">submit</button>
+        </form>  
+     </div>
+     
+     
+       <div id="deleteTeacher">
+       <img style="cursor:pointer" onclick="RemoveDeleteTeacher()" src="/images/delete.png" width="50"/><br><br>
+        <form action="deleteTeacher" method="POST">
+          <label>Id:</label>
+          <input name="id" type="text"><br><br>
+       <button type="submit">submit</button>
+        </form>  
+     </div>
+     
+     <div id="addStudent" >
+     
+     <img style="cursor:pointer" onclick="RemoveAddStudent()" src="/images/delete.png" width="50" /><br><br>
+     <form action="addStudent" method="POST">
+		<label>Roll No:</label>
+		<input name="stuid" type="text"/>
+		<br/><br/>
+		<label>Name:</label>
+		<input name="name" type="text"/>
+		<br/><br/>
+		<label>Mother's name:</label>
+		<input name="mname" type="text"/>
+		<br/><br/>
+		<label>Father's Name:</label>
+		<input name="fname" type="text"/>
+		<br/><br/>
+		<label>Date of birth:</label>
+		<input name="dob" type="date" placeholder="DD- MM- YY"/><br><br>
+	   <button type="submit">submit</button>
+	</form>
+	</div>
+	
+	<div id="editStudent" >
+	 <img style="cursor:pointer" onclick="RemoveEditStudent()" src="/images/delete.png" width="50"/><br><br>
+     <form action="editStudent" method="POST">
+		<label>Roll No:</label>
+		<input name="stuid" type="text"/>
+		<br/><br/>
+		<label>Name:</label>
+		<input name="name" type="text"/>
+		<br/><br/>
+		<label>Mother's name:</label>
+		<input name="mname" type="text"/>
+		<br/><br/>
+		<label>Father's Name:</label>
+		<input name="fname" type="text"/>
+		<br/><br/>
+		<label>Date of birth:</label>
+		<input name="dob" type="date"/><br><br>
+   <button type="submit">submit</button>
+	</form>
+	</div>
+	
+	<div id="deleteStudent">
+	 <img style="cursor:pointer" onclick="RemoveDeleteStudent()" src="/images/delete.png" width="50"/><br><br>
+		<form action="deleteStudent" method="POST">
+		
+			<label>Roll No:</label>
+			<input name="stuid" type="text"/><br><br>
+			   <button type="submit">submit</button>
+		</form>
+	</div>
+	
+	
+       
+       <script>
+              function addTeacher(){
+			       document.getElementById("addTeacher").style.display="block";
+		        }
+              function RemoveAddTeacher(){
+                    document.getElementById("addTeacher").style.display="none";
+              }
+      
+              function editTeacher(){
+                  document.getElementById("editTeacher").style.display="block";
+              }
+              function RemoveEditTeacher(){
+                  document.getElementById("editTeacher").style.display="none";
+            }
+              function deleteTeacher()
+              {
+               document.getElementById("deleteTeacher").style.display="block";
+              }
+              function RemoveDeleteTeacher(){
+                  document.getElementById("deleteTeacher").style.display="none";
+            }
+              function addStudent(){
+			       document.getElementById("addStudent").style.display="block";
+		        }
+              function RemoveAddStudent(){
+                  document.getElementById("addStudent").style.display="none";
+            }
+     
+             function editStudent(){
+                 document.getElementById("editStudent").style.display="block";
+             }
+             function RemoveEditStudent(){
+                 document.getElementById("editStudent").style.display="none";
+           }
+             function deleteStudent()
+             {
+              document.getElementById("deleteStudent").style.display="block";
+             }
+             function RemoveDeleteStudent(){
+                 document.getElementById("deleteStudent").style.display="none";
+           }
+             
+             </script>
+             
+</div>
+</div>
+</body>
